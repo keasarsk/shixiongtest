@@ -2,7 +2,9 @@
   <div id="bar" :style="size">
     <div class="dragRectTop"></div>
     
-    <div>UAV控制设备列表</div>
+    <div>
+    <Select></Select>
+    </div>
     <!-- <el-row> -->
 
     <div class="two">
@@ -42,6 +44,7 @@
 <script>
 // import ECharts from '@/page/uavinfodisplay/displaycontents/ECharts'
 // import * as  echarts from 'echarts';
+import Select from './Select.vue'
 import {mapState,mapMutations,mapActions} from 'vuex'
 export default {
   components: {
@@ -55,6 +58,10 @@ export default {
         height: '5rem'
       }
     }
+  },
+  components: {
+    Select
+
   },
   computed:{
     // 获取store/uavInfo中存储的state

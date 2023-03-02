@@ -5,7 +5,7 @@
 
     <!-- <e-charts :size="size" :options="options" /> -->
 
-    设备横列表
+    <SelectForInfo></SelectForInfo>
     <!-- <hr>
     经度,,纬度 -->
     <div class="rectangle">
@@ -48,6 +48,7 @@
 
 <script>
 import ECharts from './ECharts'
+import SelectForInfo from './SelectForInfo.vue';
 // import * as  echarts from 'echarts';
 
 // 请求无人机后端
@@ -144,6 +145,7 @@ export default {
   },
   components: {
     ECharts,
+    SelectForInfo
   },
   created() {
     // setInterval(() => {

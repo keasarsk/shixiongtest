@@ -1,6 +1,7 @@
 <template>
 <div :style="size">
-  <div class="dragRectBottom"></div>
+  <div class="dragRectTop"></div>
+
   <el-table
   :data="tableData2"
   style="width: 98%"
@@ -18,10 +19,61 @@
       label="地址">
     </el-table-column>
   </el-table>
+  <div class="dragRectBottom"></div>
 </div>
 
 </template>
 
+
+
+<script>
+  export default {
+    methods: {
+      tableRowClassName({row, rowIndex}) {
+        if (rowIndex === 1) {
+          return 'warning-row';
+        } else if (rowIndex === 3) {
+          return 'success-row';
+        }
+        return '';
+      }
+    },
+    data() {
+      return {
+        size: {
+          width: '100%',
+          height: '7rem',
+        },
+        tableData2: [{
+          date: '201',
+          name: '王小虎',
+          address: '上海市',
+        }, {
+          date: '2016-05-04',
+          name: '王小虎',
+          address: '上海市'
+        }, {
+          date: '2016-05-01',
+          name: '王小虎',
+          address: '上海市',
+        }, {
+          date: '2016-05-03',
+          name: '王小虎',
+          address: '上海市'
+        }, {
+          date: '2016-05-03',
+          name: '王小虎',
+          address: '上海市'
+        }, {
+          date: '2016-05-03',
+          name: '王小虎',
+          address: '上海市'
+        }]
+      }
+    }
+  }
+  
+</script>
 <style>
 .el-table .warning-row {
   background: oldlace;
@@ -95,44 +147,3 @@
     bottom: 0;
 }
 </style>
-
-<script>
-  export default {
-    methods: {
-      tableRowClassName({row, rowIndex}) {
-        if (rowIndex === 1) {
-          return 'warning-row';
-        } else if (rowIndex === 3) {
-          return 'success-row';
-        }
-        return '';
-      }
-    },
-    data() {
-      return {
-        size: {
-          width: '100%',
-          height: '7rem',
-        },
-        tableData2: [{
-          date: '201',
-          name: '王小虎',
-          address: '上海市',
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市'
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          address: '上海市',
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市'
-        }]
-      }
-    }
-  }
-  
-</script>

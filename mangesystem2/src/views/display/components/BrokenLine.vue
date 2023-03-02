@@ -26,7 +26,6 @@ export default {
   },
   data: function () {
     return {
-
       options: {
         tooltip: {},
         visualMap: {
